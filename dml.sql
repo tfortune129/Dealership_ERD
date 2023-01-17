@@ -11,6 +11,7 @@ INSERT INTO salesperson(
    'Roberts' 
 );
 
+SELECT * FROM salesperson
 -- CUSTOMER
 INSERT INTO customer(
     first_name,
@@ -40,12 +41,16 @@ INSERT INTO invoice(
     2,
     2,
     2
+),
+(
+    1,
+    2,
+    1
 );
 
--- since values are auto generated, is that why i keep getting errors?
--- how do i fix this?
-
 SELECT * FROM invoice
+
+
 
 -- CAR
 INSERT INTO car(
@@ -61,7 +66,25 @@ INSERT INTO car(
     'Jeep',
     'Wrangler',
     2022
+),
+(
+    'Honda',
+    'Civic',
+    2017
 );
+
+DELETE FROM car
+where car_id = 4;
+DELETE FROM car
+where car_id = 5;
+UPDATE car
+SET
+    car_model = 'Civic',
+    car_year = 2019
+WHERE
+    car_id = 3;
+
+
 
 SELECT * from car;
 
@@ -71,30 +94,26 @@ INSERT INTO service(
     mechanic_id,
     customer_id
 ) VALUES(
-    1,
-    1,
+    3,
+    2,
     1
-)
+);
+
+
+
+
 -- MECHANIC
 INSERT INTO mechanic(
     first_name,
     last_name
 ) VALUES(
-    'Curtis'
+    'Curtis',
     'Jackson'
 ),
 (
-    'Peter'
+    'Peter',
     'Griffin'
 );
 
 -- saying i have an additional column but there is none after select all:
 SELECT * FROM mechanic
-
--- SERVICE_HISTORY
-INSERT INTO service_history(
-    history,
-    serial_num
-)
-
---??

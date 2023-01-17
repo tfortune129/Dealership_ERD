@@ -29,8 +29,6 @@ CREATE TABLE car(
     car_year VARCHAR(45)
 );
 
-ALTER TABLE car
-ADD serial_num INTEGER NOT NULL;
 
 -- CREATE SERVICE TABLE
 CREATE TABLE service(
@@ -58,12 +56,7 @@ DROP COLUMN car_id;
 
 --dropped car id but still getting error
 
-CREATE TABLE service_history(
-    history VARCHAR(1000),
-    serial_num INTEGER,
-    FOREIGN KEY (serial_num) REFERENCES CAR(serial_num)
-);
 
 SELECT * FROM service_history
-
+SELECT * from car
 -- cant get service history to work even after alter
